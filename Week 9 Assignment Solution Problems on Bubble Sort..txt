@@ -1,0 +1,93 @@
+﻿Question.1
+Which of the following(s) is/are true about bubble sort:
+1.It is stable sort
+2.It has a worst case space complexity of O(n)
+3.It involves swapping of adjacent elements
+4.After each iteration, the greatest element is placed at the end of the array.
+Output: 1,3,4
+
+
+
+
+
+
+Question.2
+What will the following array look like after one iteration of bubble sort [1,6,2,5,4,3].
+1.[1,3,2,4,5,6]
+2.[1,2,3,4,5,6]
+3.[1,2,5,4,3,6]
+4.[1,2,4,5,3,6]
+Output: 3
+
+
+
+
+
+
+Question.3
+In which case does bubble sort works in the most efficient way:
+1.When the array is sorted in increasing order
+2.When the array is sorted partially
+3.When the array is sorted in decreasing order.
+4.When the array is nearly sorted.
+Output: 1
+
+
+
+
+
+
+Question.4
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int arr[6]={5,4,6,3,2,1};
+    int n = 6;
+    for(int i=0; i<6; i++){
+        cout<<arr[i]<<" ";
+    }
+    for(int i=0; i<n-1; i++){ //n-1 passes
+        //trverse
+        for(int j=0; j<n-1; j++){
+            if(arr[j]<arr[j+1]){ //swap
+            //int temp = arr[j];
+            //arr[j] = arr[j+1];
+            //arr[j+1] = temp;
+            swap(arr[j],arr[j+1]);
+            }
+        }
+    }
+    cout<<endl;
+    for(int i=0; i<6; i++){
+        cout<<arr[i]<<" ";
+    }
+}
+
+
+
+
+
+
+Question.5
+#include <iostream>
+using namespace std;
+int main(){
+
+
+    int A[5]={1,2,3,4,5};
+    int n = 5;
+    for (int i = 0; i < n - 1; i++) {
+        if (A[i] > A[i + 1]) {
+        swap(A[i], A[i + 1]);
+        i++;
+    }
+    }
+    int i;
+    for (i = 0; i < n - 1; i++)
+        if (A[i] > A[i + 1]) {
+        cout<<"No"<<endl;
+        break;
+    }
+    if(i == n - 1)cout<<"Yes"<<endl;
+    return 0;
+}
